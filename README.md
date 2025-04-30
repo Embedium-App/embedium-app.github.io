@@ -1,6 +1,6 @@
 # Embedium
 
-Embed any URL or YouTube video
+Embed any URL or YouTube video that your heart desires. (Metaphor)
 
 ## To use
 
