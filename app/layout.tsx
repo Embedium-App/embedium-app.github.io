@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Embedium - Embed Any Content',
   description: 'Easily embed content from any URL, including YouTube videos.',
+  icons: [{ rel: "icon", URL: "./favicon.svg" }],
 };
 
 export default function RootLayout({
