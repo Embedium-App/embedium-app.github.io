@@ -15,12 +15,12 @@ interface UrlFormProps {
 }
 
 export function UrlForm({ onEmbed, className }: UrlFormProps) {
-  const [url, setUrl] = useState("");
+  let [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
+    url = 'https://'+url;
     e.preventDefault();
-    
     if (!url.trim()) {
       toast.error("Please enter a URL");
       return;
@@ -45,7 +45,7 @@ export function UrlForm({ onEmbed, className }: UrlFormProps) {
       onEmbed(transformedUrl);
       
       // Reset the form
-      setUrl("");
+      setUrl('');
       toast.success("Content embedded successfully!");
     } catch (error) {
       toast.error("Failed to embed content. Please try again.");
@@ -72,7 +72,7 @@ export function UrlForm({ onEmbed, className }: UrlFormProps) {
             <Link className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
               id="url"
-              placeholder="https://example.com"
+              placeholder="example.com"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               className="pl-10 pr-4 py-6 text-base"
